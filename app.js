@@ -9,6 +9,7 @@ const config = require("./config/config");
 const environment = process.env.NODE_ENV;
 const sequelize = new Sequelize(config[environment]);
 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs")
 
 
