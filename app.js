@@ -29,7 +29,9 @@ app.get("/edit-project/:index", editProject);
 app.get("/project-detail/:index", projectDetail);
 
 
-
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 //project
 app.post("/myProject", postProject);
