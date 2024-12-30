@@ -1,13 +1,24 @@
 {
     "version": 2,
+    "env": {
+      "NODE_ENV": "production",
+      "POSTGRES_USER": "your_username",
+      "POSTGRES_PASSWORD": "your_password",
+      "POSTGRES_DATABASE": "your_database",
+      "POSTGRES_HOST": "your_host"
+    },
     "builds": [
       {
         "src": "app.js",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": ["views/**/*", "assets/**/*"]
-        }
+        "use": "@vercel/node"
       }
-    ]
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.js"
+      }
+    ],
+    "includeFiles": ["views/**/*", "assets/**/*"]
   }
   
