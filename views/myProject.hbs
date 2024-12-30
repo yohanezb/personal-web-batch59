@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<head>
+  <title>My Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/contact.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/css/project.css" />
+  <link rel="stylesheet" href="assets/css/font.css" />
+  <link rel="stylesheet" href="assets/css/nav.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="background-color: lightgrey;">
+  <nav class="navbar navbar-expand-lg bg-white py-4">
+    <div class="container">
+        <div class="nav-left">
+            <img src="assets/img/logo.png" height="30">
+            <ul class="nav-links">
+                <li><a href="/" class="nav-item-desktop">Home</a></li>
+                <li><a href="/myProject" class="nav-item-desktop active">My Project</a></li>
+                <li><a href="/testimonial" class="nav-item-desktop">Testimonials</a></li>
+            </ul>
+        </div>
+        <div class="nav-right d-flex flex-row">
+            <a href="/contact" class="btn btn-dark rounded-pill px-4 me-2 d-none d-lg-block">Contact Me</a>
+            <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="collapse navbar-collapse bg-white border-bottom d-lg-none" id="navbarCollapse">
+    <div class="container py-3">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/myProject">My Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/testimonial">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+  <div class="container my-5">
+    <div class="container" style="max-width: 450px;">
+      <div class="form-container">
+        <form method="post" action="/myProject">
+          <h1 class="text-center mb-4">ADD MY PROJECT</h1>
+          <div class="mb-3">
+            <label for="input-project-title" class="form-label">Project Name</label>
+            <input id="input-project-title" class="form-control" name="title" />
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="input-project-start-date" class="form-label">Start Date</label>
+              <input type="date" id="input-project-start-date" class="form-control" name="startDate" />
+            </div>
+            <div class="col">
+              <label for="input-project-end-date" class="form-label">End Date</label>
+              <input type="date" id="input-project-end-date" class="form-control" name="endDate" />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="input-project-description" class="form-label">Description</label>
+            <textarea id="input-project-description" class="form-control" rows="4" name="description"></textarea>
+            <label class="mt-3">Technologies</label>
+          </div>
+          <div class="checkbox-container mb-3">
+            <div class="form-check mb-2">
+              <input type="checkbox" class="form-check-input mb-1 me-3" id="node-js" name="technologies" value="Node JS">
+              <label class="form-check-label" for="node-js">Node JS</label>
+            </div>  
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input mb-1 me-3" id="next-js" name="technologies" value="Next JS">
+              <label class="form-check-label" for="next-js">Next JS</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input mb-1 me-3" id="react-js" name="technologies" value="React JS">
+              <label class="form-check-label" for="react-js">React JS</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input mb-1 me-3" id="type-script" name="technologies" value="TypeScript">
+              <label class="form-check-label" for="type-script">TypeScript</label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="input-project-image">Upload Image</label>
+            <label class="input-group bg-white rounded" style="cursor: pointer;" onclick="document.getElementById('input-project-image').click();">
+                <button class="btn btn-secondary" type="button">Choose</button>
+                <input type="file" id="input-project-image" class="form-control" style="display: none;" />
+                <img class="img-thumbnail ms-auto" style="height: 40px" src="assets/icon/attach.png" alt="file" />
+            </label>
+        </div>  
+          <div class="text-end">
+            <button type="submit" class="btn btn-dark">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+    <h1 class="mt-4 text-center">MY PROJECT</h1>
+    <div class="row justify-content-center project-list">
+      <div class="col-md-9">
+        <div id="descriptions" class="project-list">
+          {{#each data}}
+          <div class="project-list-item card mb-3 p-3" style="width: 350px; height: 550px ;border: 2px solid #343a40;">
+            <div class="project-image">
+              <a href="/project-detail/{{id}}">
+                <img src="{{image}}" class="card-img-top" alt="" style="height: 200px; object-fit: cover;" />
+            </a>            
+          </div>
+            <div class="card-body d-flex flex-column p-0">
+                <h2 class="card-title text-center" style="margin: 0;">
+                    <a href="/project-detail/{{id}}" target="_blank" class="text-dark" style="text-decoration: none;">{{title}}</a>
+                </h2>
+                <div class="detail-project-description">
+                    {{get_full_time createdAt}}|| {{author}}
+                </div>
+                <p class="card-text mb-0">{{get_distance_time createdAt}}</p>
+                <p class="text-center mb-0">----------------------------------</p>
+                <div class="detail-project-description text-end">
+                  {{get_full_time start_date}} to {{get_full_time end_date}}
+                </div>
+                <div class="detail-project-description text-end">
+                  Duration: {{duration start_date end_date}}
+                </div>         
+                <div class="detail-project-description">
+                  <p class="mb-0"><strong>Technologies:</strong> {{#each technologies}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</p>
+                </div>
+                <div class="truncate">
+                <p class="card-text" style="max-height: 72px;">
+                    {{description}}
+                </p>
+                </div>
+                <div class="mt-auto">
+                    <div class="col d-flex justify-content-between">
+
+                        <form class="m-0 p-0" method="get" action="/edit-project/{{id}}">
+                          <button class="btn btn-secondary" style=" background-color: #343a40; border-color: #343a40;">Edit Post</button>
+                        </form>
+
+                        <form class="m-0 p-0" method="post" action="/delete-project/{{id}}">
+                          <button type="submit" class="btn btn-secondary" style=" background-color: #343a40; border-color: #343a40;">Delete Post</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

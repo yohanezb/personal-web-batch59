@@ -1,0 +1,22 @@
+.btn-contact {
+    background-color: rgb(9, 9, 9);
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 20px;
+}
+
+.btn-delete {
+    background-color: rgb(198, 79, 79);
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 20px;
+}
+
+.btn-socialMedia {
+    background-color: transparent;
+    border-color: transparent;
+}

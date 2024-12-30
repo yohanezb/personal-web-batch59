@@ -1,0 +1,54 @@
+/* Navbar Desktop */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling khusus untuk menu desktop */
+.nav-item-desktop {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 500 !important;
+}
+
+.nav-item-desktop.active {
+    font-weight: 700 !important;
+}
+
+.nav-item-desktop:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+/* Collapse Menu Mobile */
+.collapse .navbar-nav .nav-link {
+    padding: 8px 16px;
+    color: black;
+    border-radius: 4px;
+}
+
+.collapse .navbar-nav .nav-link:hover {
+    color: grey;
+}
+
+.collapse .navbar-nav .nav-link.active {
+    background-color: #424649 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}

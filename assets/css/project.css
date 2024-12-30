@@ -1,0 +1,269 @@
+
+.project-form {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .project-form .form-container {
+    width: auto;
+
+  }
+  
+  .project-form .form-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .project-form form label {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .project-form form input,
+  textarea,
+  select {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #f4f3f3;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+  }
+  
+  .project-form form textarea {
+    height: 250px;
+  }
+  
+  .project-form form .input-project-image-group {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #f4f3f3;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .project-form form .input-project-image-group label p {
+    font-size: 15px;
+  }
+  
+  .project-form form .input-project-image-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .project-form form .button-group {
+    text-align: right;
+  }
+  
+  .project-form form button {
+    margin-top: 50px;
+    padding: 8px 20px;
+    font-size: 17px;
+    background: #ec4d37;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .project hr {
+    border: 1px solid #dbdbdb;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  
+    .project-list {
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .project .project-list .project-list-item {
+    height: 500px;
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 2px solid black;
+    box-shadow: 8px 3px 10px 5px rgba(0, 0, 0, 0.09);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project .project-list .project-list-item .project-image {
+    flex: 1;
+  }
+  
+  .project .project-list .project-list-item .project-image img {
+    width: 60%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .project .project-list .project-list-item .project-content {
+    padding-left: 20px;
+    flex: 2;
+  }
+  
+  .project-content p {
+    width: 500px;
+    word-wrap: break-word;
+  }
+  
+  .project .project-list .btn-group {
+    text-align: right;
+    margin-bottom: 5px;
+  }
+  
+  .project .project-list .btn-group .btn-edit {
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 4px;
+    background: #dbdbdb;
+  }
+  
+  .project .project-list .btn-group .btn-post {
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 4px;
+    background: rgb(9, 9, 9);
+    color: #fff;
+  }
+  
+  .project .project-list h1 a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  .project .project-list .detail-project-description {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    margin-top:0
+  }
+  
+  .project .project-list .project-list-item p {
+    display:flex;
+    margin-bottom: 0;
+    width: 300px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+  .project-detail {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .project-detail-container {
+    width: 80%;
+    margin: 40px 0;
+  }
+  
+  .project-detail-container img {
+    width: 100%;
+  }
+  
+  .project-detail-container h1 {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 120%;
+    margin-bottom: 15px;
+  }
+  
+  .project-detail-container .author {
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 120%;
+    margin-bottom: 20px;
+  }
+  
+  .project-detail-container p {
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 140%;
+    text-align: justify;
+    padding: 100px;
+  }
+  
+  .checkbox-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 100%;  
+  }
+  
+  .checkbox-container label {
+      width: 100%;
+  }
+  
+  .checkbox-container div {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+  }
+
+.truncate {      
+  overflow: hidden;       
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;  
+}
+
+@media only screen and (max-width: 768px) {
+    .project-form form div[style*="flex-direction: row"] {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-form form input,
+    .project-form form textarea {
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .checkbox-container {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+    .project-form .form-container {
+      margin: 0px 10px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    form {
+        padding: 20px;
+    }
+
+    /* Reduce padding for text areas and adjust button alignment */
+    .project-form form textarea {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .project-form form button {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

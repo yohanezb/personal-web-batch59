@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/contact.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/project.css" />
+    <link rel="stylesheet" href="/assets/css/font.css" />
+    <link rel="stylesheet" href="/assets/css/nav.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+<body style="background-color: lightgrey;">
+  <nav class="navbar navbar-expand-lg bg-white py-4">
+    <div class="container">
+        <div class="nav-left">
+            <img src="/assets/img/logo.png" height="30">
+            <ul class="nav-links">
+                <li><a href="/" class="nav-item-desktop">Home</a></li>
+                <li><a href="/myProject" class="nav-item-desktop active">My Project</a></li>
+                <li><a href="/testimonial" class="nav-item-desktop">Testimonials</a></li>
+            </ul>
+        </div>
+        <div class="nav-right d-flex flex-row">
+            <a href="/contact" class="btn btn-dark rounded-pill px-4 me-2 d-none d-lg-block">Contact Me</a>
+            <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</nav>
+    
+    
+<div class="collapse navbar-collapse bg-white border-bottom d-lg-none" id="navbarCollapse">
+    <div class="container py-3">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-center text-light bg-secondary" href="/">{{user.name}}</a>
+            </li>
+            <li class="nav-item">
+            <form action="/logout" method="POST" class="d-flex justify-content-center" style="display: inline;">
+              <button class="btn btn-danger rounded-pill px-4 mt-2 mt-lg-0" type="submit">Logout</button>
+            </form>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/myProject">My Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/testimonial">Testimonials</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+</div>
+    
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto bg-white p-4 rounded shadow">
+                <h2 class="text-center">{{title}}</h2>
+                <img src="https://picsum.photos/200/300" class="img-fluid mb-3 mx-auto d-block" alt="Project Image" />
+                <h5 class="text-muted">Author: Yohanes</h5>
+                <p class="text-muted">Date: <span id="project-date">{{get_full_time createdAt}} || {{get_distance_time createdAt}}</span></p>
+                <h4>Duration: {{get_full_time start_date}} to {{get_full_time end_date}} || {{duration start_date end_date}}</h4>
+                <h4>Technologies Used: {{#each technologies}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</h4>
+                <h4>Description</h4>
+                <p>{{description}}</p>
+                <div class="text-center mt-4">
+                    <button class="btn btn-secondary" onclick="window.location.href='/myProject'">Back to Projects</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
