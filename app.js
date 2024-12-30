@@ -15,7 +15,6 @@ app.set("view engine", "hbs")
 
 //publication
 app.use("/assets", express.static(path.join(__dirname, "./assets")));
-app.use("/views", express.static("views"));
 app.use(express.urlencoded({ extended: true }));
 
 
